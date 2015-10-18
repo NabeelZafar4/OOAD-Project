@@ -1,19 +1,20 @@
 package Controller;
-
 import Model.StudentDB;
+import SimpleClasses.Student;
+
 public class StudentController {
 
-	public boolean AddStudent()
+	public boolean AddStudent(Student std)
 	{
-		return true;
+		return StudentDB.AddStudent(std);
 	}
-	public boolean DelStudent()
+	public boolean DelStudent(int id)
 	{
-		return true;
+		return StudentDB.DelStudent(id);
 	}
-	public boolean UpdateStudent()
+	public boolean UpdateStudent(Student std)
 	{
-		return true;
+		return StudentDB.UpdateStudentInfo(std);
 	}
 	public void AssignCourseList(int sid,int lid)
 	{
@@ -21,6 +22,7 @@ public class StudentController {
 	}
 	public int getBatch(int sid)
 	{
+		// Return 1 for now will update in after
 		return 1;
 	}
 }
