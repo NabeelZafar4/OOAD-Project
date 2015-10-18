@@ -6,4 +6,5 @@ public class AcademicOfficer  {
 	private StaffDB stf;
 	
 	
+	private StaffDB a;
 }
