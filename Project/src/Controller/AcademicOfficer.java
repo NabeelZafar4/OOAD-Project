@@ -4,7 +4,5 @@ import Model.StaffDB;
 
 public class AcademicOfficer  {
 	private StaffDB stf;
-	
-	
-	private StaffDB a;
+	// Just a Comment
 }
