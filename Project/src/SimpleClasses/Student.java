@@ -4,21 +4,39 @@ import java.util.Date;
 
 public class Student {
 
-	private String Name;
-	private String MName;
-	private String FName;
+	private String name;
+	private String middleName;
+	private String fatherName;
 	private int rollNo;
 	protected int batch;
 	private Date dob;
 
+	public Student(String name,String middleName,String fatherName,int roll,int batch,Date dob)
+	{
+		setName(name);
+		setMiddleName(middleName);
+		setFName(fatherName);
+		setRollNo(roll);
+		setBatch(batch);
+		setDOB(dob);
+	}
 	
 	public String getName() {
-		return Name;
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public void setName(String name) {
-		Name = name;
+	public void setMiddleName(String name)
+	{
+		middleName = name;
 	}
+	public String getMiddleName()
+	{
+		return middleName;
+	}
+	
 	public void setDOB(Date dt)
 	{
 		dob=dt;
@@ -27,20 +45,27 @@ public class Student {
 	{
 		return dob;
 	}
-	public String getFName() {
-		return FName;
-	}
 
+	public String getFName() {
+		return fatherName;
+	}
 	public void setFName(String fName) {
-		FName = fName;
+		fatherName = fName;
 	}
 
 	public int getRollNo() {
 		return rollNo;
 	}
-
 	public void setRollNo(int rollNo) {
 		this.rollNo = rollNo;
 	}
 	
+	public void setBatch(int batch)
+	{
+		this.batch = batch;
+	}
+	public int getBatch()
+	{
+		return batch;
+	}
 }
