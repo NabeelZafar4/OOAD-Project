@@ -2,6 +2,8 @@ package Model;
 
 import java.sql.SQLException;
 
+import com.mysql.jdbc.ResultSet;
+
 import SimpleClasses.Student;
 import sql.MySqlJdbc;
 
@@ -11,7 +13,7 @@ public class StudentDB {
 	
 	public static boolean AddStudent(Student std)
 	{
-		String query= "INSERT INTO `student`(`name`, `mName`, `fName`, `rollNo`, `batch`, `dob`,`id`) VALUES (\""+std.getName()+"\",\""+std.getMiddleName()+"\",\""+std.getFName()+"\",\""+std.getRollNo()+"\","+std.getBatch()+",\""+std.getDOB()+"\", DEFAULT)";
+		String query= "INSERT INTO `student`(`name`, `mName`, `fName`, `rollNo`, `batch`, `dob`) VALUES (\""+std.getName()+"\",\""+std.getMiddleName()+"\",\""+std.getFName()+"\",\""+std.getRollNo()+"\","+std.getBatch()+",\""+std.getDOB()+"\")";
 
 		db.execute(query);
 
@@ -33,6 +35,21 @@ public class StudentDB {
 	}
 	public static int getBatch(int sId)
 	{
+		return 1;
+	}
+	public static int getUniqueId()
+	{
+		try
+		{
+			String query= "SELECT COUNT(*) as count FROM `student` where 1";
+			ResultSet rs = (ResultSet) db.executeSelect(query);
+			if(rs.next())
+				return rs.getInt("count")+1;
+		}
+		catch(Exception e)
+		{
+			System.out.println("Got an Error : "+e.getMessage());
+		}
 		return 1;
 	}
 }
